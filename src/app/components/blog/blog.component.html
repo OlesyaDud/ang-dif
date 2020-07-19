@@ -1,1 +1,72 @@
-<p>blog works!</p>
+<div class="container-fluid blog">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>2 way data binding with ngModel</h3>
+            <input type="text" [(ngModel)]="yourname">
+            <h5 appHighlight>Your name is {{yourname}}</h5>
+        </div>
+
+      
+        <div class="col-lg-12">
+            <h3>NgIf Directive</h3>
+            <p>if we have a condition, and we change parts based on condition. Ex:</p>
+            <p>Show at all times</p>
+            <p *ngIf="show">Show only if "show" is true</p>
+
+            <!-- different from hidden in that it removes element from the DOM unlike hidden -->
+            <p [hidden]="!show">
+                Show this only if "show" is true
+            </p>
+
+            <!-- null --only show when not null -->
+            <p *ngIf="yourname">
+                {{yourname}}
+            </p>
+
+            <!-- logical operator NOT ! -->
+            <p *ngIf="!show">
+                Show this only if "show" is NOT true
+            </p>
+
+            <!-- && when both are true then show -->
+            <p *ngIf="a && b">
+                When both a and b  are true
+            </p>
+
+            <p *ngIf="a || b">
+                Show this only if a or b are true
+            </p>
+
+            <!-- <p>Working with Else</p> -->
+            <div *ngIf="show; else notShow">
+                <p>
+                  Show this only if "show" is true
+                </p>
+              </div>
+              
+              <ng-template #notShow>
+                <p>
+                  Show this only if "show" is not true
+                </p>
+              </ng-template>
+
+
+              <!-- this one is when we work with a block -->
+              <ng-template
+                *ngIf="show;then showBlock; else notShowBlock">
+                </ng-template>
+
+                <ng-template #showBlock>
+                <p>
+                    Show this only if "show" is true
+                </p>
+                </ng-template>
+
+                <ng-template #notShowBlock>
+                <p>
+                    Show this only if "show" is not true
+                </p>
+            </ng-template>
+        </div>
+    </div>
+</div>

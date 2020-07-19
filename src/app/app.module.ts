@@ -15,11 +15,17 @@ import { ButtonComponent } from './components/button/button.component';
 import { CardComponent } from './components/card/card.component';
 import { JumbotronComponent } from './components/jumbotron/jumbotron.component';
 import { HomeComponent } from './components/home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HighlightDirective } from './highlight.directive';
+import { ButtonclickcountDirective } from './buttonclickcount.directive';
+
 
 @NgModule({
    imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
@@ -32,7 +38,7 @@ import { HomeComponent } from './components/home/home.component';
     ButtonComponent,
     CardComponent,
     JumbotronComponent, 
-    HomeComponent
+    HomeComponent, HighlightDirective, ButtonclickcountDirective
   ],
  
   providers: [],
