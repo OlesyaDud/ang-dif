@@ -18,6 +18,10 @@ import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HighlightDirective } from './highlight.directive';
 import { ButtonclickcountDirective } from './buttonclickcount.directive';
+import { HttpClientModule } from '@angular/common/http';
+import {UserService} from './services/user.service';
+
+
 
 
 @NgModule({
@@ -25,7 +29,9 @@ import { ButtonclickcountDirective } from './buttonclickcount.directive';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+
   ],
   declarations: [
     AppComponent,
@@ -41,7 +47,7 @@ import { ButtonclickcountDirective } from './buttonclickcount.directive';
     HomeComponent, HighlightDirective, ButtonclickcountDirective
   ],
  
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
