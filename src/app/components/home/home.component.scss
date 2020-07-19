@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+}
+.sidenav {
+    height: 100%;
+    width: 12rem;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(37, 36, 105);
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #9b8d8d;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+//   withough this we can have just a streight vertical line
+  .list-item {
+      position: relative;
+  }
+
+  .list-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      opacity: 0;
+      transform: scaleY(0);
+      transition: transform .2s, opacity .2s;
+    // width: 50px;  keep it for just a streight vertical line
+
+      background-color: #9b8d8d;
+      width: 5px;
+  }
+
+  .list-item:hover::before {
+      opacity: 1;
+      transform: scaleY(1);
+  }
