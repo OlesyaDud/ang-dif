@@ -10,6 +10,7 @@ import { BlogComponent } from './components/blog/blog.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+   { path: 'register', component: RegisterComponent}, 
   { path: 'home', component: HomeComponent, 
   children: [
     { path: 'blog', component: BlogComponent },
